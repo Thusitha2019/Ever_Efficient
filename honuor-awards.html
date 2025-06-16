@@ -2,278 +2,297 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hounor Awards</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      background-color: #000;
-      color: #f8f8f8;
-      font-family: 'Segoe UI', sans-serif;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hounor Awards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #000;
+            color: #f8f8f8;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-    .back-button {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      padding: 8px 16px;
-      border: 2px solid gold;
-      background: transparent;
-      color: white;
-      font-weight: bold;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      z-index: 1000;
-    }
+        @media (max-width: 576px) {
+            .back-button {
+                top: 10px;
+                left: 10px;
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+        }
 
-    .back-button:hover {
-      background-color: gold;
-      color: black;
-      text-decoration: none;
-    }
+        .back-button:hover {
+            background-color: gold;
+            color: black;
+            text-decoration: none;
+        }
 
-    .hero {
-      position: relative;
-      background: url('assets/img/award/background_1.png') no-repeat center center;
-      background-size: cover;
-      height: 100vh;
-      color: #fff;
-    }
+        .hero {
+            position: relative;
+            background: url('assets/img/award/background_1.png') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            color: #fff;
+        }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 0;
-    }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
 
-    .hero .container {
-      position: relative;
-      z-index: 1;
-    }
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
 
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #ffd700;
-    }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffd700;
+        }
 
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 15px;
-      color: #eee;
-    }
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            color: #eee;
+        }
 
-    .countdown-box {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
+        .countdown-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
 
-    .countdown-box>div {
-      background: #222;
-      border-radius: 8px;
-      padding: 12px 20px;
-      min-width: 80px;
-      text-align: center;
-    }
+        .countdown-box>div {
+            background: #222;
+            border-radius: 8px;
+            padding: 12px 20px;
+            min-width: 80px;
+            text-align: center;
+        }
 
-    .count {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #ffd700;
-    }
+        .count {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
 
-    .section {
-      padding: 60px 15px;
-    }
+        .section {
+            padding: 60px 15px;
+        }
 
-    .section-dark {
-      background-color: #111;
-    }
+        .section-dark {
+            background-color: #111;
+        }
 
-    .section h2 {
-      color: #ffd700;
-      margin-bottom: 30px;
-      text-align: center;
-    }
+        .section h2 {
+            color: #ffd700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
 
-    .who-we-are img,
-    .winners img,
-    .invitation-section img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
+        .who-we-are img,
+        .winners img,
+        .invitation-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
 
-    #Btn {
-      background: transparent;
-      color: gold;
-      border: 2px solid gold;
-      border-radius: 25px;
-      transition: background-color 0.3s, color 0.3s;
-    }
+        #Btn {
+            background: transparent;
+            color: gold;
+            border: 2px solid gold;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-    #Btn:hover,
-    #Btn:focus {
-      background: gold;
-      color: black;
-      outline: none;
-    }
+        #Btn:hover,
+        #Btn:focus {
+            background: gold;
+            color: black;
+            outline: none;
+        }
 
-    .winners img {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+        .winners img {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-    @media (max-width: 576px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
 
-      .hero p {
-        font-size: 1rem;
-      }
+            .hero p {
+                font-size: 1rem;
+            }
 
-      #Btn {
-        width: 100%;
-      }
-    }
-  </style>
+            #Btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <section class="hero d-flex justify-content-center align-items-center text-center text-md-start">
-    <div class="container">
-      <a href="index.html" class="back-button">← Home</a>
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <h1>RECOGNIZING BRILLIANCE</h1>
-          <p>Celebrating the success stories of exceptional businesses and professionals.</p>
-          <div class="countdown-box">
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a href="../index.html" class="navbar-brand fw-bold text-warning">← Home</a>
+        </div>
+    </nav>
+
+    <section class="hero d-flex justify-content-center align-items-center text-center text-md-start">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1>RECOGNIZING BRILLIANCE</h1>
+                    <p>Celebrating the success stories of exceptional businesses and professionals.</p>
+                    <div class="countdown-box">
+                        <div>
+                            <div id="days" class="count">00</div>
+                            <small>Days</small>
+                        </div>
+                        <div>
+                            <div id="hours" class="count">00</div>
+                            <small>Hours</small>
+                        </div>
+                        <div>
+                            <div id="minutes" class="count">00</div>
+                            <small>Minutes</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="./assets/img/award/background_logo_1.png" alt="Logo" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark who-we-are">
+        <div class="container">
+            <h2 style="font-size: 2.5rem;">HONOUR OF BUSINESS TALENT 2025</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1>WHO WE ARE</h1>
+                    <p>Business Solutions Group proudly announces its awards ceremony designed to recognize and
+                        celebrate business excellence across Sri Lanka. Get ready to be inspired by stories of success,
+                        innovation, and perseverance.</p>
+                    <button id="Btn" class="btn btn-primary mt-4" onclick="window.location.href='about.html'">About
+                        Us</button>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="./assets/img/award/background_logo_2.png" alt="Who We Are" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section winners py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">MEET OUR PREVIOUS AWARD WINNERS</h2>
+            <div class="row justify-content-center align-items-center" id="winnerRow">
+                <div class="col-12 col-sm-6 col-md-4 mb-4"><img src="./assets/img/award/winner_1.jpg"
+                        class="img-fluid" /></div>
+                <div class="col-12 col-sm-6 col-md-4 mb-4"><img src="./assets/img/award/winner_2.jpg"
+                        class="img-fluid" /></div>
+                <div class="col-12 col-sm-6 col-md-4 mb-4"><img src="./assets/img/award/winner_3.jpg"
+                        class="img-fluid" /></div>
+
+                <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img
+                        src="./assets/img/award/winner_4.jpg" class="img-fluid" /></div>
+                <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img
+                        src="./assets/img/award/winner_5.jpg" class="img-fluid" /></div>
+                <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img
+                        src="./assets/img/award/winner_6.jpg" class="img-fluid" /></div>
+                <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img
+                        src="./assets/img/award/winner_7.jpg" class="img-fluid" /></div>
+                <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img
+                        src="./assets/img/award/winner_8.jpg" class="img-fluid" /></div>
+                <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img
+                        src="./assets/img/award/winner_9.jpg" class="img-fluid" /></div>
+                <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img
+                        src="./assets/img/award/winner_10.jpg" class="img-fluid" /></div>
+                <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img
+                        src="./assets/img/award/winner_11.jpg" class="img-fluid" /></div>
+            </div>
+            <button id="viewAllBtn" class="btn btn-primary mt-4"
+                style="background: transparent; color: gold; border: 2px solid gold; border-radius: 25px;">View
+                All</button>
+        </div>
+    </section>
+
+    <section class="section section-dark text-center invitation-section">
+        <h2>YOU ARE CORDIALLY INVITED</h2>
+        <p style="max-width: 700px; margin: 0 auto;">Join us at the grand celebration of Sri Lanka’s most influential
+            and dynamic professionals and organizations as we spotlight the finest contributions to business excellence.
+        </p>
+        <img src="./assets/img/award/award_image.png" alt="Award Image" class="mt-4 img-fluid mx-auto d-block" />
+    </section>
+
+    <footer class="footer text-white text-center py-5">
+        <h5>AWARD CEREMONY DETAILS</h5>
+        <p>June 27th 2025 – BMICH</p>
+        <div class="countdown-box">
             <div>
-              <div id="days" class="count">00</div>
-              <small>Days</small>
+                <div id="days" class="count">00</div><small>Days</small>
             </div>
             <div>
-              <div id="hours" class="count">00</div>
-              <small>Hours</small>
+                <div id="hours" class="count">00</div><small>Hours</small>
             </div>
             <div>
-              <div id="minutes" class="count">00</div>
-              <small>Minutes</small>
+                <div id="minutes" class="count">00</div><small>Minutes</small>
             </div>
-          </div>
         </div>
-        <div class="col-md-6 text-center">
-          <img src="./assets/img/award/background_logo_1.png" alt="Logo" class="img-fluid" />
-        </div>
-      </div>
-    </div>
-  </section>
+        <p class="mt-4">Powered By EVER EFFICIANT Business Management (Pvt) Ltd</p>
+    </footer>
 
-  <section class="section section-dark who-we-are">
-    <div class="container">
-      <h2 style="font-size: 2.5rem;">HONOUR OF BUSINESS TALENT 2025</h2>
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <h1>WHO WE ARE</h1>
-          <p>Business Solutions Group proudly announces its awards ceremony designed to recognize and celebrate business excellence across Sri Lanka. Get ready to be inspired by stories of success, innovation, and perseverance.</p>
-          <button id="Btn" class="btn btn-primary mt-4" onclick="window.location.href='about.html'">About Us</button>
-        </div>
-        <div class="col-md-6 text-center">
-          <img src="./assets/img/award/background_logo_2.png" alt="Who We Are" class="img-fluid" />
-        </div>
-      </div>
-    </div>
-  </section>
+    <script>
+        const targetDate = new Date("June 27, 2025 00:00:00").getTime();
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            let days = "00", hours = "00", minutes = "00", seconds = "00";
+            if (distance > 0) {
+                days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                days = days.toString().padStart(2, '0');
+                hours = hours.toString().padStart(2, '0');
+                minutes = minutes.toString().padStart(2, '0');
+                seconds = seconds.toString().padStart(2, '0');
+            }
+            document.querySelectorAll("#days").forEach(el => el.innerText = days);
+            document.querySelectorAll("#hours").forEach(el => el.innerText = hours);
+            document.querySelectorAll("#minutes").forEach(el => el.innerText = minutes);
+            document.querySelectorAll("#seconds").forEach(el => el.innerText = seconds);
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 
-  <section class="section winners py-5">
-    <div class="container text-center">
-      <h2 class="mb-4">MEET OUR PREVIOUS AWARD WINNERS</h2>
-      <div class="row justify-content-center align-items-center" id="winnerRow">
-        <!-- First 3 always visible -->
-        <div class="col-12 col-sm-6 col-md-4 mb-4"><img src="./assets/img/award/winner_1.jpg" class="img-fluid" /></div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4"><img src="./assets/img/award/winner_2.jpg" class="img-fluid" /></div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4"><img src="./assets/img/award/winner_3.jpg" class="img-fluid" /></div>
-
-        <!-- Hidden winners -->
-        <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img src="./assets/img/award/winner_4.jpg" class="img-fluid" /></div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img src="./assets/img/award/winner_5.jpg" class="img-fluid" /></div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img src="./assets/img/award/winner_6.jpg" class="img-fluid" /></div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img src="./assets/img/award/winner_7.jpg" class="img-fluid" /></div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img src="./assets/img/award/winner_8.jpg" class="img-fluid" /></div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img src="./assets/img/award/winner_9.jpg" class="img-fluid" /></div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img src="./assets/img/award/winner_10.jpg" class="img-fluid" /></div>
-        <div class="col-12 col-sm-6 col-md-4 mb-4 extra-winner d-none"><img src="./assets/img/award/winner_11.jpg" class="img-fluid" /></div>
-      </div>
-      <button id="viewAllBtn" class="btn btn-primary mt-4"
-        style="background: transparent; color: gold; border: 2px solid gold; border-radius: 25px;">View All</button>
-    </div>
-  </section>
-
-  <section class="section section-dark text-center invitation-section">
-    <h2>YOU ARE CORDIALLY INVITED</h2>
-    <p style="max-width: 700px; margin: 0 auto;">Join us at the grand celebration of Sri Lanka’s most influential and dynamic professionals and organizations as we spotlight the finest contributions to business excellence.</p>
-    <img src="./assets/img/award/award_image.png" alt="Award Image" class="mt-4 img-fluid mx-auto d-block" />
-  </section>
-
-  <footer class="footer text-white text-center py-5">
-    <h5>AWARD CEREMONY DETAILS</h5>
-    <p>June 27th 2025 – BMICH</p>
-    <div class="countdown-box">
-      <div><div id="days" class="count">00</div><small>Days</small></div>
-      <div><div id="hours" class="count">00</div><small>Hours</small></div>
-      <div><div id="minutes" class="count">00</div><small>Minutes</small></div>
-    </div>
-    <p class="mt-4">Powered By EVER EFFICIANT Business Management (Pvt) Ltd</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
-    const targetDate = new Date("June 27, 2025 00:00:00").getTime();
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-      let days = "00", hours = "00", minutes = "00", seconds = "00";
-      if (distance > 0) {
-        days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        days = days.toString().padStart(2, '0');
-        hours = hours.toString().padStart(2, '0');
-        minutes = minutes.toString().padStart(2, '0');
-        seconds = seconds.toString().padStart(2, '0');
-      }
-      document.querySelectorAll("#days").forEach(el => el.innerText = days);
-      document.querySelectorAll("#hours").forEach(el => el.innerText = hours);
-      document.querySelectorAll("#minutes").forEach(el => el.innerText = minutes);
-      document.querySelectorAll("#seconds").forEach(el => el.innerText = seconds);
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
-
-  <script>
-    const viewAllBtn = document.getElementById('viewAllBtn');
-    const extraWinners = document.querySelectorAll('.extra-winner');
-    let isExpanded = false;
-    viewAllBtn.addEventListener('click', () => {
-      extraWinners.forEach(winner => {
-        winner.classList.toggle('d-none');
-      });
-      isExpanded = !isExpanded;
-      viewAllBtn.innerText = isExpanded ? 'View Less' : 'View All';
-    });
-  </script>
+    <script>
+        const viewAllBtn = document.getElementById('viewAllBtn');
+        const extraWinners = document.querySelectorAll('.extra-winner');
+        let isExpanded = false;
+        viewAllBtn.addEventListener('click', () => {
+            extraWinners.forEach(winner => {
+                winner.classList.toggle('d-none');
+            });
+            isExpanded = !isExpanded;
+            viewAllBtn.innerText = isExpanded ? 'View Less' : 'View All';
+        });
+    </script>
 </body>
 
 </html>
