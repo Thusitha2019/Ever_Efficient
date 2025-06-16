@@ -22,6 +22,36 @@
             }
         }
 
+        @media (max-width: 576px) {
+            .hero {
+                text-align: center !important;
+                padding-top: 4rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero .row {
+                flex-direction: column-reverse;
+            }
+
+            .countdown-box {
+                justify-content: center !important;
+            }
+
+            .count {
+                font-size: 3rem;
+            }
+        }
+
+
         .back-button:hover {
             background-color: gold;
             color: black;
@@ -32,9 +62,12 @@
             position: relative;
             background: url('assets/img/award/background_1.png') no-repeat center center;
             background-size: cover;
-            height: 100vh;
+            min-height: 100vh;
             color: #fff;
+            overflow: hidden;
+            padding: 60px 15px;
         }
+
 
         .hero::before {
             content: "";
@@ -50,7 +83,10 @@
         .hero .container {
             position: relative;
             z-index: 1;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
         }
+
 
         .hero h1 {
             font-size: 2.5rem;
@@ -88,7 +124,7 @@
             color: #fff;
             line-height: 1;
         }
-        
+
         .section {
             padding: 60px 15px;
         }
@@ -153,10 +189,10 @@
         </div>
     </nav>
 
-    <section class="hero d-flex justify-content-center align-items-center text-center text-md-start">
+    <section class="hero d-flex align-items-center text-center text-md-start">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-6">
+                <div class="col-md-6 mb-4 mb-md-0">
                     <h1>RECOGNIZING BRILLIANCE</h1>
                     <p>Celebrating the success stories of exceptional businesses and professionals.</p>
                     <div class="countdown-box">
@@ -180,6 +216,7 @@
             </div>
         </div>
     </section>
+
 
     <section class="section section-dark who-we-are">
         <div class="container">
